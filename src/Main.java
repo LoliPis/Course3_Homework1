@@ -1,5 +1,6 @@
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
@@ -18,5 +19,10 @@ public class Main {
         } else {
             minMaxConsumer.accept(newList.getFirst(), newList.getLast());
         }
+    }
+
+    public static void countEventNumbers(List<Integer> list){
+        List<Integer> newList = list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
+        System.out.println(newList.size());
     }
 }
